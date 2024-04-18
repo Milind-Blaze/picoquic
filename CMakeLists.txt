@@ -422,23 +422,54 @@ if(BUILD_TESTING AND picoquic_BUILD_TESTS)
     target_include_directories(server_toy PRIVATE loglib picoquic)
     set_picoquic_compile_settings(server_toy)
 
+    # Added by Talal
     add_executable(client_toy
     toy_app/client.cpp)
     target_link_libraries(client_toy PRIVATE picoquic-log picoquic-core)
     target_include_directories(client_toy PRIVATE loglib picoquic)
     set_picoquic_compile_settings(client_toy)
     
+    # Added by Talal
     add_executable(server_toy_mp
     toy_app/server_mp.cpp)
     target_link_libraries(server_toy_mp PRIVATE picoquic-log picoquic-core)
     target_include_directories(server_toy_mp PRIVATE loglib picoquic)
     set_picoquic_compile_settings(server_toy_mp)
 
+    # Added by Talal
     add_executable(client_toy_mp
     toy_app/client_mp.cpp)
     target_link_libraries(client_toy_mp PRIVATE picoquic-log picoquic-core)
     target_include_directories(client_toy_mp PRIVATE loglib picoquic)
     set_picoquic_compile_settings(client_toy_mp)
+
+    # Added by Talal
+    add_executable(sender_sp
+    SVC/sender_sp.cpp)
+    target_link_libraries(sender_sp PRIVATE picoquic-log picoquic-core)
+    target_include_directories(sender_sp PRIVATE loglib picoquic)
+    set_picoquic_compile_settings(sender_sp)
+
+    # Added by Talal
+    add_executable(receiver_sp
+    SVC/receiver_sp.cpp)
+    target_link_libraries(receiver_sp PRIVATE picoquic-log picoquic-core)
+    target_include_directories(receiver_sp PRIVATE loglib picoquic)
+    set_picoquic_compile_settings(receiver_sp)
+
+    # Added by Talal
+    add_executable(sender_mp_original
+    SVC/sender_mp_original.cpp)
+    target_link_libraries(sender_mp_original PRIVATE picoquic-log picoquic-core)
+    target_include_directories(sender_mp_original PRIVATE loglib picoquic)
+    set_picoquic_compile_settings(sender_mp_original)
+
+    # Added by Talal
+    add_executable(receiver_mp_original
+    SVC/receiver_mp_original.cpp)
+    target_link_libraries(receiver_mp_original PRIVATE picoquic-log picoquic-core)
+    target_include_directories(receiver_mp_original PRIVATE loglib picoquic)
+    set_picoquic_compile_settings(receiver_mp_original)
 
 endif()
 
